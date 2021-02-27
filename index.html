@@ -47,7 +47,7 @@
             const weatherDesc = document.getElementById('desc');
             
             // console.log('clicked',cityName);
-            fetch('http://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=0743dd3a342c7f6f938c1760383156b7')
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=0743dd3a342c7f6f938c1760383156b7')
             .then (res => res.json())
             .then(data => {
                 showCityName.innerText =`${data.name}, ${data.sys.country}`;
