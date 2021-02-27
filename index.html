@@ -42,6 +42,7 @@
         document.getElementById('search').addEventListener('click', function(){
             const cityName = document.getElementById('input-city').value;
             const showCityName = document.getElementById('city-name');
+            const temperature = document.getElementById('temperature');
             const weatherIcon = document.getElementById('icon');
             const weatherDesc = document.getElementById('desc');
             
@@ -50,7 +51,6 @@
             .then (res => res.json())
             .then(data => {
                 showCityName.innerText =`${data.name}, ${data.sys.country}`;
-                const temperature = document.getElementById('temperature');
                 temp = Math.floor(data.main.temp-273);
                 temperature.innerText = temp;
                 weatherIcon.innerHTML = `<img src ="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`
